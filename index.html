@@ -46,10 +46,10 @@ h1, h3, p, footer { text-align: center }
   window.redditCb = function(res) {
     try {
       var t = res.data.created_utc * 1000;
-	  var nowT = +new Date() + (new Date().getTimezoneOffset() * 60000);
-	  // Reddit seems to treat this fuzzily for timezone differences, so we should also treat it fuzzily.
+      var nowT = +new Date() + (new Date().getTimezoneOffset() * 60000);
+      // Reddit seems to treat this fuzzily for timezone differences, so we should also treat it fuzzily.
       var isCakeDay = (Math.abs(nowT - t) % OneYear) <= 86400000;
-	  var d = new Date(t);
+      var d = new Date(t);
       var now = new Date(nowT);
       var n = now.getFullYear() - d.getFullYear();
       var msg;
